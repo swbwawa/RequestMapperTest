@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                                      http://www.springframework.org/schema/context
+                                      http://www.springframework.org/schema/context/spring-context.xsd">
+                                      <!-- 注意上面的也可以写成spring-context-4.3.xsd，如果不写则默认是用当前的版本 -->
+
+    <!-- 注意这里的base-package的值就是HelloWorldController.java所在的包名 -->
+    <context:component-scan base-package="org.fkit.controller" />
+	<!-- 配置处理器映射器 -->
+    <bean class ="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!-- 配置处理器适配器 -->
+    <bean class ="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <!-- 配置视图解析器 -->
+    <bean class ="org.springframework.web.servlet.view.InternalResourceViewResolver"/> 
+	
+</beans>
